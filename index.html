@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html style="scroll-behavior: smooth;" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ahmed ali elamri</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+       
+    <header>
+        <div class="presentaion">
+             <h1>
+            ahmed ali elamri
+        </h1>
+       
+    <br>
+        <strong>
+            "la progarmmation c'est ma passion"
+        </strong>
+        <blockquote>Lorem ipsum dolor sit amet consectetur adipisicing elit.</blockquote> 
+        </div>
+      
+        <img src="https://thumbs.dreamstime.com/b/sourire-beau-de-jeune-homme-58604690.jpg" alt="photo d'un jeune homme" width="200px" >
+       
+    </header>
+    <nav>
+        <ul>
+            <li> <a href="#music">musique</a></li>
+            <li><a href="#gym">gym</a></li>
+            <li><a href="#prog">progarmmation</a></li>
+        </ul>
+    <hr>
+
+    </nav>
+    <section class="section">
+        <div>
+            <h2>presentaion</h2>
+            <p style="width: 400px; text-align: justify;">Je m'appelle ali et je suis développeur front-end spécialisé dans la création d'interfaces web attrayantes et performantes. Avec une solide maîtrise de HTML, CSS et JavaScript, ainsi que des frameworks comme React ou Vue.js, je m'efforce d'offrir des expériences utilisateur intuitives et réactives.</p>
+            <h2>mes loisires</h2>
+
+            <h4 id="music">musique</h4>
+            <p>j'aime la musique classique comme le jazz et si j'etais au gym j'aime ecouter electrique musique comme dj etc </p>
+        </div>
+
+        <div>
+            <h4 id="gym">gym</h4>
+            <p>j'aime faire du sport pour faire sortire l'energie negative et pour rester en bonne forme  </p>
+        </div>
+
+        <div>
+            <h4 id="prog">progarmmation</h4>
+            <p>j'aime programmer designer tous ce qui est requis la creativite  </p>
+            <br>
+        </div>
+        
+    </section class="section">
+    <table border="true">
+        <thead>
+            <tr>
+                <th><strong>prenome</strong></th>
+                <th>nom</th>
+                <th>music</th>
+                <th>equip</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>ali</td>
+                <td>elamri</td>
+                <td>god's plan</td>
+                <td rowspan="3">team a</td>
+            </tr>
+            <tr>
+                <td>ismail</td>
+                <td>gagnon</td>
+                <td>hot line</td>
+               
+            </tr>
+            <tr>
+                <td>mouad</td>
+                <td>jason</td>
+                <td>over</td>
+               
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <img src="https://thumbs.dreamstime.com/b/sourire-beau-de-jeune-homme-58604690.jpg" alt="" width="200px">
+
+    <script>
+      // Select all sections with the class 'section'
+const sections = document.querySelectorAll(".section");
+
+// Create the Intersection Observer with proper options
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // Correctly add the 'show' class without the dot
+            entry.target.classList.add("show");
+            // Stop observing the element after it's animated
+            observer.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.4 // This should be part of the options, not inside the callback
+});
+
+const options = {
+            threshold: 0.5 // Trigger when 50% of the element is visible
+        };
+
+        const observers = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show"); // Add the "show" class to fade in
+                } else {
+                    entry.target.classList.remove("show"); // Remove the "show" class when it exits
+                }
+            });
+        }, options); // Pass options to the observer
+
+        // Select all elements to observe
+        const boxes = document.querySelectorAll('.box');
+        boxes.forEach(box => {
+            observers.observe(box); // Start observing each box
+        });
+
+// Observe each section
+sections.forEach(section => {
+    observer.observe(section);
+});
+ </script>
+</body>
+</html>
